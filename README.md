@@ -7,6 +7,7 @@
 ```c
 find_package(OpenSSL REQUIRED)
 find_package(workflow REQUIRED)
+add_executable(demo1 demo.cpp)
 target_link_directories(demo1 PRIVATE ${WORKFLOW_LIB_DIR})
 target_link_libraries(demo1 workflow pthread OpenSSL::SSL OpenSSL::Crypto)
 ```
