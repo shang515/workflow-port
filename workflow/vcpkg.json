@@ -1,6 +1,7 @@
 {
   "name": "workflow",
-  "version-string": "v0.9.1",
+  "port-version": 2,
+  "version-string": "v0.9.2",
   "description": "As Sogou`s C++ server engine, Sogou C++ Workflow supports almost all back-end C++ online services of Sogou, including all search services, cloud input method，online advertisements, etc., handling more than 10 billion requests every day. This is an enterprise-level programming engine in light and elegant design which can satisfy most C++ back-end development requirements.",
   "dependencies": ["openssl"]
 }
