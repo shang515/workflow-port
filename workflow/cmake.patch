@@ -1,0 +1,40 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index dde67fb..6b6aedb 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -81,7 +81,7 @@ set(CONFIG_LIB_DIR ${LIB_DIR})
+ configure_package_config_file(
+ 	${PROJECT_NAME}-config.cmake.in
+ 	${PROJECT_SOURCE_DIR}/${PROJECT_NAME}-config.cmake
+-	INSTALL_DESTINATION ${CMAKE_CONFIG_INSTALL_DIR}
++	INSTALL_DESTINATION share/${PROJECT_NAME}
+ 	PATH_VARS CONFIG_INC_DIR CONFIG_LIB_DIR
+ )
+ 
+@@ -90,13 +90,13 @@ set(CONFIG_LIB_DIR ${CMAKE_INSTALL_LIBDIR})
+ configure_package_config_file(
+ 	${PROJECT_NAME}-config.cmake.in
+ 	${CMAKE_CONFIG_INSTALL_FILE}
+-	INSTALL_DESTINATION ${CMAKE_CONFIG_INSTALL_DIR}
++	INSTALL_DESTINATION share/${PROJECT_NAME}
+ 	PATH_VARS CONFIG_INC_DIR CONFIG_LIB_DIR
+ )
+ 
+ install(
+ 	FILES ${CMAKE_CONFIG_INSTALL_FILE}
+-	DESTINATION ${CMAKE_CONFIG_INSTALL_DIR}
++	DESTINATION share/${PROJECT_NAME}
+ 	COMPONENT devel
+ 	RENAME ${PROJECT_NAME}-config.cmake
+ )
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 95bf4a0..1da86de 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -115,5 +115,5 @@ install (
+ install (
+ 	EXPORT ${CMAKE_PROJECT_NAME}-targets
+ 	FILE ${CMAKE_PROJECT_NAME}-targets.cmake
+-	DESTINATION "${CMAKE_CONFIG_INSTALL_DIR}"
++	DESTINATION share/${PROJECT_NAME}
+ )
